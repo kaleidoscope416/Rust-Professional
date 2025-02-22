@@ -5,8 +5,22 @@
 */
 
 
-fn sort<T>(array: &mut [T]){
+fn sort<T:PartialOrd+Copy>(array: &mut [T]){
 	//TODO
+    let len = array.len();
+    for i in 0 .. len-1{
+        let j = 0;
+        for j in 0 .. len -1{
+            if array[j]>array[j+1]{
+                let mut temp: T;
+                temp = array[j];
+                array[j]=array[j+1];
+                array[j+1]=temp;
+            }
+
+        } 
+
+    }
 }
 #[cfg(test)]
 mod tests {
